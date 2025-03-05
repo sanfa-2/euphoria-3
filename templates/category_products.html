@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/category.css' %}" />
+{% endblock %}
+
+{% block title %}
+EUPHORIA || Products by Category
+{% endblock %}
+
+{% block content %}
+
+<section class="category-products">
+  <div class="wrapper">
+    <div class="header">
+      <div class="rectangle"></div>
+      <h1>Products in 
+        {% if first_related_category %}
+          {{ first_related_category.name }}
+        {% else %}
+          {{ category.title }}
+        {% endif %}
+      </h1>
+    </div>
+    <div class="products">
+      {% if products.exists %}
+        {% for product in products %}
+        <div class="product-card">
+          <div class="card-image-container">
+            <a href="{% url 'web:product_detail' product.id %}">
+              <img src="{{ product.image.url }}" alt="{{ product.title }}" class="product-image" />
+            </a>
+          </div>
+          <div class="newcards">
+          <div class="product-content">
+            <h5><a href="{% url 'web:product_detail' product.id %}">{{ product.title }}</a></h5>
+            <p>{{ product.brand_name }}</p>
+          </div>
+          <div class="product-price">
+            <button>${{product.price}}</button>
+          </div>
+        </div>
+          <div class="wishlist">
+            <a href="{% url 'web:add_to_wish_cart' product.id %}"><img src="{% static 'images/wishlist.svg' %}" alt="Wishlist" /></a>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p>No products available in this category.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'users/auth_base.html' %}
+ {% load static %} 
+ {% block title %}EUPHORIA |
+Signup{% endblock %}{% block content %}
+<div class="main_container">
+  <div class="logo_container">
+    <a href="index.html">
+      <span>
+        <img
+          src="{% static 'images/Logo.svg' %}"
+          alt=" Logo"
+          class="logo"
+        />
+      </span>
+    </a>
+  </div>
+  <div class="text_container">
+    <h1>Create an account</h1>
+    <h6>WE MADE YOUR EVERYDAY FASHION BETTER!</h6>
+  </div>
+  <div class="bottom">
+    <form action="" method="post">
+      {% csrf_token %} {% for field in form %}
+      <div class="input_container_signup">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+
+        {{ field }} {% if field.errors %}
+        <div class="error">{{ field.errors }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <div class="submit_container">
+        <button type="submit">Signup</button>
+      </div>
+    </form>
+    <div class="sign-up_container">
+      <a href="{% url 'users:login' %}">Do you have an account? Login</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

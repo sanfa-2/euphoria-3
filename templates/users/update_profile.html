@@ -1,0 +1,21 @@
+{% extends 'users/auth_base.html' %}
+{% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile_updates.css' %}" />
+{% endblock %}
+{% block title %}EUPHORIA | Profile Updating{% endblock %}
+
+{% block content %}
+<div class="update-profile-container">
+    <h2 class="update-profile-title">Update Your Profile</h2>
+    <form method="POST" enctype="multipart/form-data" class="update-profile-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.profile_picture.label_tag }}
+            {{ form.profile_picture }}
+        </div>
+        <button type="submit" class="btn-submit">Save Changes</button>
+        <a href="javascript:history.back()" class="btn-back">Go Back</a>
+
+    </form>
+</div>
+{% endblock %}

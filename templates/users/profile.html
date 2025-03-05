@@ -1,0 +1,23 @@
+{% extends 'users/auth_base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profiles.css' %}" />
+{% endblock %}
+{% block title %}Profile | Euphoria{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <h2>Welcome, {{ user.first_name }}!</h2>
+    <div class="profile-info">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        {% if user.profile.profile_picture %}
+            <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-pic">
+        {% else %}
+            <p>No profile picture uploaded.</p>
+        {% endif %}
+    </div>
+    <a href="{% url 'users:update-profile' %}" class="btn">Update Profile Picture</a>
+    <a href="javascript:history.back()" class="btn-back">Go Back</a>
+</div>
+{% endblock %}

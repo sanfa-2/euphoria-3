@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  {% block extra_css %}
+  {% endblock %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>{% block title %} EUPHORIA || home {% endblock %}</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="shortcut icon" href="{% static './images/Logo.svg' %}" type="image/x-icon" />
+</head>
+
+<body>
+  <header>
+    <div class="wrapper">
+      <section id="task_baar">
+        <div class="left">
+          <h1>
+            <a href="#"><img src="{% static 'images/Logo.png' %}" alt="" /></a>
+          </h1>
+          <nav class="menu">
+            <ul style="font-family: core_sans_c65_bold">
+              <li><a href="/">Shop</a></li>
+              <li><a href="{% url 'web:men_categories' %}">Men</a></li>
+              <li><a href="{% url 'web:women_categories' %}">Women</a></li>
+              <li><a href="">Compos</a></li>
+              <li><a href="">Joggers</a></li>
+            </ul>
+          </nav>
+          <div id="nav-menu">
+            <div class="cover">
+              <div onclick="HideMenu()">
+                <img src="{% static './images/close-x.svg' %}" alt="" />
+              </div>
+              <div>
+                <ul>
+                  <li><a href="/">Shop</a></li>
+                  <li><a href="{% url 'web:men_categories' %}">Men</a></li>
+                  <li><a href="{% url 'web:women_categories' %}">Women</a></li>
+                  <li><a href="">Compos</a></li>
+                  <li><a href="">Joggers</a></li>
+                </ul>
+                <div class="icons">
+                  <a href="wish-cart/">
+                    <img src="{% static 'images/wishlist.svg' %}" alt="" />
+                  </a>
+                  <a href="{% url 'users:login' %}"><img src="{% static 'images/account.svg' %}" alt="" /></a>
+                  <a href="/cart/"><img src="{% static 'images/cart.svg' %}" alt="" /></a>
+                </div>
+                <a href="{% url 'users:logout' %}" class="log-out">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="cover">
+            <div class="search">
+              <img src="{% static 'images/search.svg' %}" alt="" />
+            </div>
+            <form method="GET" action="{% url 'web:search' %}" id="searchForm">
+              <input type="text" name="q" id="searchInput" placeholder="Search for products..."
+                value="{{ request.GET.q }}" onkeypress="clearAfterSubmit(event)" />
+            </form>
+
+
+          </div>
+
+          <div class="icons">
+            {% if request.user.is_authenticated %}
+            <a href="wish-cart/">
+              <img src="{% static 'images/wishlist.svg' %}" alt="Wishlist" />
+            </a>
+            <div class="account-container">
+              {% if user.profile.profile_picture %}
+              <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-pic" />
+              {% else %}
+              <img src="{% static 'images/account.svg' %}" alt="Account" class="account-icon" />
+              {% endif %}
+              <a href="{% url 'users:logout' %}" class="log-out">Log Out</a>
+            </div>
+            <a href="/cart/">
+              <img src="{% static 'images/cart.svg' %}" alt="Cart" />
+            </a>
+            {% else %}
+            <a href="wish-cart/">
+              <img src="{% static 'images/wishlist.svg' %}" alt="Wishlist" />
+            </a>
+            <a href="{% url 'users:login' %}">
+              <img src="{% static 'images/account.svg' %}" alt="Account" />
+            </a>
+            <a href="/cart/">
+              <img src="{% static 'images/cart.svg' %}" alt="Cart" />
+            </a>
+            {% endif %}
+          </div>
+          
+
+          <div class="open-menu" onclick="ShowMenu()">
+            <img src="{% static './images/icons8-menu.svg' %}" alt="" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+  {% block content %}
+  <!-- Default content -->
+  {% endblock %}
+
+  <!-- endblock -->
+  <section class="footer">
+    <div class="wrapper">
+      <div class="top">
+        <ul>
+          <li>
+            <h1>Need Help</h1>
+          </li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h1>Company</h1>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">euphoria Blog</a></li>
+          <li><a href="#">euphoriastan</a></li>
+          <li><a href="#">Collaboration</a></li>
+          <li><a href="#">Media</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h1>More Info</h1>
+          </li>
+          <li><a href="#">Term and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h1>Location</h1>
+          </li>
+          <li><a href="#">support@euphoria.in</a></li>
+          <li><a href="">Eklingpura Chouraha, Ahmedabad Main Road</a></li>
+          <li>
+            <a href="#">(NH 8- Near Mahadev Hotel) Udaipur, India- 313002</a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottum">
+        <div class="last">
+          <div class="bottom_left">
+            <ul>
+              <li>
+                <a href="#">
+                  <div class="icon_1 icon">
+                    <img src="{% static 'images/facebook.svg' %}" alt="facebook" />
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="icon_2 icon">
+                    <img src="{% static 'images/instagram copy.svg' %}" alt="instagram" />
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="icon_3 icon">
+                    <img src="{% static 'images/twitter.svg' %}" alt="twitter" />
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="icon_4 icon">
+                    <img src="{% static 'images/linkedin.svg' %}" alt="linkedin" />
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom_right">
+            <h1>Download The App</h1>
+            <ul>
+              <li>
+                <a href="#"><img src="{% static 'images/playstore.svg' %}" alt="playstore" />
+                  <div class="text">
+                    <h6><a href="#">android app on</a></h6>
+                    <h3><a href="#">Google Play</a></h3>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#"><img src="{% static 'images/Group.svg' %}" alt="Group" />
+                  <div class="text">
+                    <h6><a href="#">Google Play</a></h6>
+                    <h3><a href="#">App Store</a></h3>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer_bottom">
+          <h2>Popular Categories</h2>
+          <img src="{% static 'images/Icon.svg' %}" alt="icon" />
+        </div>
+        <p>Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </section>
+  {% block extra_js %}
+  <script type="module" src="{% static 'js/clear-search.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  {% endblock %}
+
+  <script>
+    function ShowMenu() {
+      const showSidebar = document.querySelector("#nav-menu");
+      showSidebar.style.display = "flex";
+    }
+
+    function HideMenu() {
+      const showSidebar = document.querySelector("#nav-menu");
+      showSidebar.style.display = "none";
+    }
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelector(".slides");
+      const totalSlides = document.querySelectorAll(".slide").length;
+      if (index >= totalSlides) {
+        currentSlide = 0;
+      } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+      } else {
+        currentSlide = index;
+      }
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showSlide(currentSlide);
+    });
+  </script>
+</body>
+
+</html>

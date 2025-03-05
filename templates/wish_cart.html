@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/wish-cart.css' %}" />
+{% endblock %}
+
+{% block title %}
+EUPHORIA || Wish Cart
+{% endblock %}
+
+{% block content %}
+<section class="wish-cart">
+    <div class="wrapper">
+        <h1>Your Wish Cart</h1>
+
+        {% if wish_cart_items %}
+        <div class="products">
+            {% for item in wish_cart_items %}
+            <div class="product-item">
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="product-image" />
+                <div class="product-info">
+                    <h3>{{ item.product.title }}</h3>
+                    <p class="product-price">${{ item.product.price }}</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <p>Total: ${{ item.total_price }}</p>
+                    <div class="buttons">
+                        <a href="{% url 'web:remove_from_wish_cart' item.product.id %}" class="button">Remove from Wish
+                            Cart</a>
+                        <a href="{% url 'web:add_to_cart' item.product.id %}" class="button_1">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>Your wish cart is empty. Add some products to your wish cart!</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

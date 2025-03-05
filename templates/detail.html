@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}" />
+{% endblock %}
+
+{% block title %}
+EUPHORIA || Products details
+{% endblock %}
+
+{% block content %}
+<section class="deals-section">
+  <div class="main-wrapper">
+    <div class="product-page">
+      <div class="product-gallery">
+        <div class="thumbnail-images">
+          {% for image in product.gallery.all %}
+          <img src="{{ image.image.url }}" alt="Product Image" class="thumbnail" />
+          {% endfor %}
+          <button class="top_arrow">
+            <img src="{% static 'images/top_arrow.svg' %}" alt="top arrow" />
+          </button>
+          <button class="bottom_arrow">
+            <img src="{% static 'images/bottom_arrow.svg' %}" alt="bottom arrow" />
+          </button>
+        </div>
+        <div class="main-image">
+          <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="product-details">
+        <div class="menu-container">
+          <a href="/" class="navlink">
+            <p>Shop</p>
+            <span class="span">
+              <img src="{% static 'images/rightarrow.svg' %}" alt="arrow" class="styled-image" />
+            </span>
+          </a>
+          <a href="#" class="navlink">
+            <p>
+              {% if first_category %}
+              {{ first_category.name }}
+              {% else %}
+              No category
+              {% endif %}
+            </p>
+            <span class="span">
+              <img src="{% static 'images/rightarrow.svg' %}" alt="arrow" class="styled-image" />
+            </span>
+          </a>
+          <a href="#" class="navlink">
+            <p>Top</p>
+          </a>
+        </div>
+
+        <h1>{{ product.title }}</h1>
+        <div class="rating">
+          <div class="star-rating-container" data-rating="{{ product.rating }}"></div>
+          <span>{{ product.rating }}</span>
+          <span>{{ product.comments }} comments</span>
+        </div>
+
+
+        <div class="size-selection">
+          <div class="size">
+            <span class="sizes">Select Size</span>
+            <span class="size-guid-span">Size Guide</span>
+            <span>
+              <img src="{% static 'images/arrow.svg' %}" alt="arrow" />
+            </span>
+          </div>
+          <div class="size-options">
+            <span class="size-option" data-size="xs">XS</span>
+            <span class="size-option" data-size="s">S</span>
+            <span class="size-option" data-size="m">M</span>
+            <span class="size-option" data-size="m">L</span>
+            <span class="size-option" data-size="xl">XL</span>
+          </div>
+        </div>
+        <div class="color-selection">
+          <span class="color">Colours Available</span>
+          <div class="colors">
+            <span class="color-option" style="background-color: #000"></span>
+            <span class="color-option" style="background-color: #f00"></span>
+            <span class="color-option" style="background-color: #ff0"></span>
+            <span class="color-option" style="background-color: #00f"></span>
+          </div>
+        </div>
+        <div class="cart">
+          <a href="{% url 'web:add_to_cart' product.id %}">
+            <button type="button" class="add-to-cart" data-product-id="{{ product.id }}">
+              <div class="shopping">
+                <img src="{% static 'images/shopping cart.svg' %}" alt="Add to cart">
+              </div>
+              Add to Cart
+            </button>
+          </a>
+          <div class="prices">
+            <span class="price">${{ product.price }}</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="features">
+            <div class="feature-item">
+              <div class="icon">
+                <img src="{% static 'images/credit card.svg'%}" alt="Secure payment">
+              </div>
+              <p>Secure payment</p>
+            </div>
+            <div class="feature-item">
+              <div class="icon">
+                <img src="{% static 'images/Size & Fit.svg'%}" alt="Size & Fit">
+              </div>
+              <p>Size & Fit</p>
+            </div>
+            <div class="feature-item">
+              <div class="icon">
+                <img src="{% static 'images/truck.svg'%}" alt="Free shipping">
+              </div>
+              <p>Free shipping</p>
+            </div>
+            <div class="feature-item">
+              <div class="icon">
+                <img src="{% static 'images/Free Shipping & Returns.svg'%}" alt="Free Shipping & Returns">
+              </div>
+              <p>Free Shipping & Returns</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- product description -->
+
+
+<section class="product_description">
+  <div class="wrapper">
+    <div class="header">
+      <div class="rectangle"></div>
+      <h1>Product Description
+      </h1>
+    </div>
+    <div class="content">
+      <div class="left">
+        <div class="tabs">
+          <span class="description">Description</span>
+          <span class="user">User comments <button>21</button></span>
+          <span class="qa">Question & Answer <button class="qa">4</button></span>
+        </div>
+        <div class="tab-content">
+          <div class="description-tab">
+            <p>100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely
+              stitched
+              with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish
+              HD
+              prints.</p>
+          </div>
+        </div>
+      </div>
+      <div class="right-details">
+        <div class="details-container">
+          <div class="top">
+            <div class="fabric">
+              <h4>Fabric</h4>
+              <h2>Bio-washed Cotton</h2>
+            </div>
+            <div class="Pattern">
+              <h4>Pattern</h4>
+              <h2>Printed</h2>
+            </div>
+            <div class="Fit">
+              <h4>Fit</h4>
+              <h2>Regular-fit</h2>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="Neck">
+              <h4>Neck</h4>
+              <h2>Round Neck</h2>
+            </div>
+            <div class="Sleeve">
+              <h4>Sleeve</h4>
+              <h2>Half-sleeves</h2>
+            </div>
+            <div class="Style">
+              <h4>Style</h4>
+              <h2>Casual Wear</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- similar section -->
+
+<section class="similar_products">
+  <div class="wrapper">
+    <div class="header">
+      <div class="rectangle"></div>
+      <h1>Similar Products</h1>
+    </div>
+    <div class="products">
+      {% if similar_products %}
+      {% for product in similar_products %}
+      <div class="product-card">
+        <div class="card-image-container">
+          <a href="{% url 'web:product_detail' product.id %}">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="product-image" />
+          </a>
+        </div>
+        <div class="newcards">
+          <div class="product-content">
+            <h5><a href="{% url 'web:product_detail' product.id %}">{{ product.title }}</a></h5>
+            <p>{{ product.brand_name }}</p>
+          </div>
+          <div class="product-price">
+            <button>${{ product.price }}</button>
+          </div>
+        </div>
+        <div class="wishlist">
+          <a href="{% url 'web:add_to_wish_cart' product.id %}"><img src="{% static 'images/wishlist.svg' %}" alt="Wishlist" /></a>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p>No similar products found in the second category.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<!-- Extra CSS and JS for this page -->
+{% block extra_js %}
+<script type="module" src="{% static 'js/starRating.js' %}"></script>
+<script type="module" src="{% static 'js/add-to-cart.js' %}"></script>
+{% endblock %}

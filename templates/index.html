@@ -1,0 +1,321 @@
+{% extends 'base.html' %} {% load static %} {% block title %}EUPHORIA || home {% endblock %}
+{% block content %}
+
+<section class="sportlight" id="sportlight">
+  <div class="wrapper">
+    <div class="light">
+      <div class="left">
+        <img src="{% static 'images/left-arrow-bold.svg' %}" class="swiper-button-prev" alt="Previous" />
+      </div>
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-bg="{% static 'images/bg-1.png' %}">
+            <div class="banner">
+              <small>T-Shirt/Tops</small>
+              <h2>Summer Value Pack</h2>
+              <small>Cool/Colorful/Comfy</small>
+              <div class="shop">
+                <a href="/">Shop Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" data-bg="{% static 'images/bg2.png' %}">
+            <div class="banner">
+              <small>Winter Collection</small>
+              <h2>Cozy Essentials</h2>
+              <small>Warm/Trendy/Durable</small>
+              <div class="shop">
+                <a href="/">Explore Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="{% static 'images/right-arrow-bold.svg' %}" class="swiper-button-next" alt="Next" />
+      </div>
+      <div class="spo">
+        <ul>
+            <li>
+                <div class="car_1"><img src="{% static 'images/carouselCaptions.svg' %}" alt="carouselCaptions" /></div>
+            </li>
+            <li>
+                <div class="car"><img src="{% static 'images/carouselCaptions.svg' %}" alt="carouselCaptions" /></div>
+            </li>
+        </ul>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- dealer section -->
+<section class="dealer">
+  <div class="wrapper">
+    <div class="card-one">
+      <div class="card_left">
+        <p style="font-family: core_sans_c65_bold">Low Price</p>
+        <h3>High Coziness</h3>
+        <p style="font-family: core_sans_c65_bold">UPTO 50% OFF</p>
+        <a href="/" style="font-family: core_sans_c65_bold">Explore Items</a>
+      </div>
+      <div class="card_right">
+        <p style="font-family: core_sans_c65_bold">Beyoung Presents</p>
+        <h3>Breezy Summer Style</h3>
+        <p style="font-family: core_sans_c65_bold">UPTO 50% OFF</p>
+        <a href="/" style="font-family: core_sans_c65_bold">Explore Items</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- arrival section -->
+<section class="new_arrival">
+  <div class="wrapper">
+    <div class="arrival">
+      <div class="new">
+        <div class="rectangle"></div>
+        <h1>New Arrival</h1>
+      </div>
+      <div class="newslider">
+        <div class="newarrow_1">
+          <img class="arrow_1 swiper-button-prev" src="{% static 'images/arrow (1).png' %}" alt="Previous" />
+        </div>
+        <div class="newslide swiper">
+          <div class="swiper-wrapper">
+            {% for product in all_products %}
+            <div class="swiper-slide slides">
+              <a href="{% url 'web:product_detail' product.id %}">
+                <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+              </a>
+              <p><a href="{% url 'web:product_detail' product.id %}">{{ product.title }}</a></p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="newarrow_2">
+          <img class="arrow_2 swiper-button-next" src="{% static 'images/arrow.png' %}" alt="Next" />
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- fasion section -->
+<section class="fashion">
+  <div class="wrapper">
+    <div class="fash">
+      <div class="left">
+        <div class="content">
+          <h6>WE MADE YOUR EVERYDAY FASHION BETTER!</h6>
+          <p>
+            In our journey to improve everyday fashion, euphoria presents
+            EVERYDAY wear range - Comfortable & Affordable fashion 24/7
+          </p>
+          <div class="shops"><a href="/">Shop Now</a></div>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CategoriesForMen section -->
+<!-- Categories For Men -->
+<section class="Categories">
+  <div class="wrapper">
+    <div class="cate">
+      <div class="rectangle"></div>
+      <h1>Categories For Men</h1>
+    </div>
+    <div class="Men">
+      {% for card in mens %}
+      <div class="newcard">
+        <div class="card-image-container">
+          <!-- Link to men's category-specific products -->
+          <a href="{% url 'web:category_products' card.id %}?type=men">
+            <img src="{{ card.image.url }}" alt="{{ card.title }}" class="card-image" />
+          </a>
+        </div>
+        <div class="card-content">
+          <!-- Title linked to explore men's category -->
+          <h5><a href="{% url 'web:category_products' card.id %}?type=men">{{ card.title }}</a></h5>
+          <p><a href="{% url 'web:category_products' card.id %}?type=men">Explore Now!</a></p>
+        </div>
+        <div class="newarrow">
+          <a href="">
+            <img class="arrow" src="{% static 'images/arrow.png' %}" alt="Next" />
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Categories For Women -->
+<section class="cat_women">
+  <div class="wrapper">
+    <div class="cate">
+      <div class="rectangle"></div>
+      <h1>Categories For Women</h1>
+    </div>
+    <div class="women"> <!-- Corrected class name here -->
+      {% for card in womens %}
+      <div class="newcard">
+        <div class="card-image-container">
+          <a href="{% url 'web:category_products' card.id %}?type=women">
+            <img src="{{ card.image.url }}" alt="{{ card.title }}" class="card-image" />
+          </a>
+        </div>
+        <div class="card-content">
+          <h5><a href="{% url 'web:category_products' card.id %}?type=women">{{ card.title }}</a></h5>
+          <p><a href="{% url 'web:category_products' card.id %}?type=women">Explore Now!</a></p>
+        </div>
+        <div class="newarrow">
+          <a href="">
+            <img class="arrow" src="{% static 'images/arrow.png' %}" alt="Next" />
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Brands section -->
+<section class="Brands">
+  <div class="wrapper">
+    <div class="Brand">
+      <div class="deal">
+        <h1>Top Brands Deal</h1>
+        <p>Up To <span>60%</span> off on brands</p>
+      </div>
+      <div class="deals">
+        <ul>
+          {% for brand in brands %}
+          <li>
+            <div>
+              <a href="#"><img src="{{ brand.image.url }}" alt="{{ brand.title }}" /></a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- In The Limelight section -->
+<section class="cat_women">
+  <div class="wrapper">
+    <div class="cate">
+      <div class="rectangle"></div>
+      <h1>Purchased Items</h1>
+    </div>
+    <div class="women">
+      {% if cart_items %}
+        <!-- Display cart items if user is checking out -->
+        {% for item in cart_items %}
+          <div class="newcard_1">
+              <div class="card-image-container">
+                  <a href="#"><img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="card-image" /></a>
+              </div>
+              <div class="card-content">
+                  <h5><a href="#">{{ item.product.title }}</a></h5>
+                  <p><a href="#">{{ item.product.brand_name }}</a></p>
+              </div>
+              <div class="newarrow">
+                  <button>${{ item.product.price }}</button>
+              </div>
+              <div class="wish">
+                  <a href="#"><img src="{% static 'images/wishlist.svg' %}" alt="Add to wishlist" /></a>
+              </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Show limelight items if no cart items -->
+        {% for card in limelights %}
+          <div class="newcard_1">
+            <div class="card-image-container">
+              <a href="#"><img src="{{ card.image.url }}" alt="{{ card.title }}" class="card-image" /></a>
+            </div>
+            <div class="card-content">
+              <h5><a href="#">{{ card.title }}</a></h5>
+              <p><a href="#">{{ card.brand_name }}</a></p>
+            </div>
+            <div class="newarrow">
+              <button>${{ card.price }}</button>
+            </div>
+            <div class="wish">
+              <a href="#"><img src="{% static 'images/wishlist.svg' %}" alt="Add to wishlist" /></a>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+
+<!-- feedback section -->
+<section class="feedback">
+  <div class="wrapper">
+    <div class="cate">
+      <div class="rectangle"></div>
+      <h1>Feedback</h1>
+    </div>
+    <div class="respons swiper">
+      <div class="swiper-wrapper">
+        {% for testimonial in testimonials %}
+        <div class="swiper-slide main">
+          <div class="top">
+            <div class="left">
+              <a href="#"><img src="{{ testimonial.image_span.url }}" alt="span" /></a>
+            </div>
+            <div class="right">
+              <ul class="star-rating" data-rating="{{ testimonial.rating }}">
+                <li>
+                  <a href="#"><img src="{% static 'images/Vector.svg' %}" alt="star" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="{% static 'images/Vector.svg' %}" alt="star" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="{% static 'images/Vector.svg' %}" alt="star" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="{% static 'images/Vector.svg' %}" alt="star" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="{% static 'images/Vector.svg' %}" alt="star" /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="bottum">
+            <h3>{{ testimonial.name }}</h3>
+            <p>
+              {{ testimonial.description }}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+{% block extra_js %}
+<script type="module" src="{% static 'js/starRating1.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+<script type="module" src="{% static 'js/sliders.js' %}"></script>
+{% endblock %}

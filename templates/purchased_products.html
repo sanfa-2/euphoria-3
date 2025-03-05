@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/orders.css' %}" />
+{% endblock %}
+
+{% block title %}
+EUPHORIA || thank-you
+{% endblock %}
+
+{% block content %}
+<section class="thank-you">
+    <div class="wrapper">
+        <div class="content">
+            <h1>Thank You for Your Order!</h1>
+            <p>Your order has been placed successfully.</p>
+            <p>Total Amount: ${{ total_price }}</p>
+
+            <h3>Your Ordered Products:</h3>
+            <div class="products">
+                {% for item in cart_items %}
+                    <div class="product-item">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="product-image" />
+                        <div class="product-info">
+                            <h4>{{ item.product.title }}</h4>
+                            <p>Quantity: {{ item.quantity }}</p>
+                            <p>Total: ${{ item.total_price }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="/">Keep Shopping</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

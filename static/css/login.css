@@ -1,0 +1,204 @@
+* {
+  font-family: inter;
+  padding: 0;
+  margin: 0;
+}
+
+.login {
+  margin: 50px 0;
+}
+
+.login .wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.login .wrapper .main_container {
+  padding: 30px 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0px 0px 8px 0px #3b82f61f;
+}
+
+.login .wrapper .main_container .logo_container {
+  margin: 0 auto;
+}
+
+.login .wrapper .main_container .logo_container a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.login .wrapper .main_container .logo_container a span {
+  color: #334155;
+}
+
+.login .wrapper .main_container .text_container {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.login .wrapper .main_container .text_container h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #0f172a;
+}
+
+.login .wrapper .main_container .text_container h6 {
+  margin: 15px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #334155;
+  opacity: 0.9;
+}
+
+.login .wrapper .main_container .bottom {
+  width: 100%;
+}
+
+.login .wrapper .main_container .bottom form .input_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login .wrapper .main_container .bottom form .input_container label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 15px;
+}
+
+.login .wrapper .main_container .bottom form .input_container input {
+  background: #f8fafc;
+  border: none;
+  outline: none;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.login .wrapper .main_container .bottom form .input_container input::placeholder {
+  color: #8a8eaa;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.login .wrapper .main_container .bottom form .input_container_signup {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+
+.login .wrapper .main_container .bottom form .input_container_signup label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 15px;
+}
+
+.login .wrapper .main_container .bottom form .input_container_signup input {
+  width: 350px;
+  background: #f8fafc;
+  border: none;
+  outline: none;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.login .wrapper .main_container .bottom form .input_container_signup input::placeholder {
+  color: #8a8eaa;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.login .wrapper .main_container .bottom .forgot-password_container {
+  text-align: center;
+}
+
+.login .wrapper .main_container .bottom .forgot-password_container a {
+  text-decoration: none;
+  color: #0f172a;
+}
+
+.login .wrapper .main_container .bottom form .submit_container {
+  margin: 20px 0;
+}
+
+.login .wrapper .main_container .bottom form .submit_container .error-message {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: red;
+}
+
+.login .wrapper .main_container .bottom form .submit_container button {
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 4px;
+  background: #3b82f6;
+  cursor: pointer;
+}
+
+.login .wrapper .main_container .bottom .sign-up_container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.login .wrapper .main_container .bottom .sign-up_container a {
+  text-decoration: none;
+  text-align: center;
+  color: #0f172a;
+}
+
+.profil {
+  margin: 10px;
+
+}
+
+a {
+  color: #334155;
+}
+
+@media(max-width:320px) {
+  .login .wrapper .main_container {
+    padding: 30px 25px;
+  }
+
+  .login .wrapper .main_container .bottom form .input_container_signup input {
+    width: 100%;
+  }
+}
+
+@media(max-width: 580px) {
+  .login.wrapper.main_container {
+    padding: 30px;
+  }
+
+  .login .wrapper .main_container.bottom form .input_container_signup input {
+    width: 100%;
+  }
+
+}
+
+@media(max-width: 640px) {
+  .login .wrapper .main_container {
+    padding: 30px;
+  }
+}

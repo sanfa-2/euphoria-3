@@ -1,0 +1,2753 @@
+@font-face {
+  font-family: "core_sans_c35_light";
+  src: url("../fonts/pring-demo-coresansc35-webfont.woff2") format("woff2"),
+    url("../fonts/fontspring-demo-coresansc35-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "core_sans_c55_medium";
+  src: url("../fonts/fontspring-demo-coresansc55-webfont.woff2") format("woff2"),
+    url("../fonts/fontspring-demo-coresansc55-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "core_sans_c65_bold";
+  src: url("../fonts/fontspring-demo-coresansc65-webfont.woff2") format("woff2"),
+    url("../fonts/fontspring-demo-coresansc65-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 10px 0;
+}
+
+
+
+header .wrapper #task_baar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .wrapper #task_baar .left {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+header .wrapper #task_baar .left h1 {
+  font-size: 34px;
+  font-weight: 400;
+}
+
+header .wrapper #task_baar .left h1 a {
+  text-decoration: none;
+}
+
+header .wrapper #task_baar .left h1 a img {
+  color: #3c4242;
+}
+
+header .wrapper #task_baar .left nav {
+  display: flex;
+  margin-left: 40px;
+  align-items: center;
+}
+
+header .wrapper #task_baar .left nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+}
+
+
+header .wrapper #task_baar .left nav ul li a:hover {
+  color: #3c4242;
+  font-size: 25px;
+  font-weight: 600;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+header .wrapper #task_baar .left nav ul li a {
+  color: #807d7e;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-decoration: none;
+  gap: 40px;
+}
+
+header .wrapper #task_baar .right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+header .wrapper #task_baar .right .cover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  padding: 12px 20px 12px 20px;
+  gap: 12px;
+}
+
+#nav-menu .cover .cover {
+  display: none;
+}
+
+
+
+header .wrapper #task_baar .right .cover input {
+  border: none;
+  background-color: #f6f6f6;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+}
+
+header .wrapper #task_baar .right .icons {
+  display: flex;
+  gap: 15px;
+}
+
+header .wrapper #task_baar .right .icons a {
+  padding: 12px;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  color: #807d7e;
+}
+.icons .account-container {
+  position: relative;
+  display: inline-block;
+}
+
+.icons .log-out {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.icons .account-container:hover .log-out {
+  display: block;
+}
+
+.profile-pic,
+.account-icon {
+  cursor: pointer;
+}
+
+header .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+header .menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #3c4242;
+}
+
+#nav-menu {
+  display: none;
+}
+
+.open-menu {
+  display: none;
+}
+
+.sportlight {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 104vh;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.light {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.banner {
+  text-align: left;
+}
+
+.shop a {
+  padding: 16px 72px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.shop a:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-slide.slides {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.swiper {
+  width: 100%;
+
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+/*  */
+.sportlight .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sportlight .wrapper .light {
+  display: flex;
+  height: auto;
+}
+
+.sportlight .wrapper .light .banner {
+  width: 100%;
+  padding: 0 0 0 80px;
+}
+
+.sportlight .wrapper .light .banner small {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 47.21px;
+  color: #ffffff;
+}
+
+.sportlight .wrapper .light .banner h2 {
+  color: #ffffff;
+  font-size: 78px;
+  font-weight: 800;
+  width: 36%;
+  line-height: 93.62px;
+  margin-top: 10px 0;
+  font-family: "core_sans_c65_bold";
+}
+
+.sportlight .wrapper .light .banner .shop {
+  margin: 50px 0px;
+}
+
+.sportlight .wrapper .light .banner .shop a {
+  padding: 16px 72px;
+  border-radius: 8px;
+  gap: 12px;
+  background-color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  color: #3c4242;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+
+.sportlight .wrapper .spo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 7%;
+  right: 46%;
+}
+
+.sportlight .wrapper .spo ul {
+  display: flex;
+  align-items: center;
+}
+
+.sportlight .wrapper .spo ul li {
+  list-style: none;
+}
+
+.sportlight .wrapper .spo ul li .car_1 img {
+  background-color: #fff;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.sportlight .wrapper .spo ul li .car img {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.dealer {
+  background-color: #fff;
+  padding: 40px 0;
+  margin-bottom: 50px;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 20px;
+  height: 50vh;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.card_left {
+  background-image: url("../images/bg2.jpg");
+  border-radius: 12px;
+  padding: 20px;
+  height: 38vh;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /* color: ffffff; */
+  padding-top: 50px;
+
+  box-shadow: 0px 6px 12px rgba(63, 62, 62, 0.695);
+}
+
+.card_right {
+  background-image: url("../images/bg3.jpg");
+  border-radius: 12px;
+  padding: 20px;
+  height: 38vh;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /* color: #000000; */
+  padding-top: 50px;
+
+  box-shadow: 0px 6px 12px rgba(63, 62, 62, 0.695);
+}
+
+.card-one {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card_left {
+  width: 50%;
+}
+
+.card_left p {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 30.07px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.card_left h3 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 10px 0;
+  font-family: "core_sans_c65_bold";
+}
+
+.card_left a {
+  display: inline-block;
+  margin-top: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.card_right p {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 30.07px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.card_right h3 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 10px 0;
+  font-family: "core_sans_c65_bold";
+  width: 40%;
+}
+
+.card_right a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.rectangle {
+  width: 2%;
+  background: #8a33fd;
+  height: 5px;
+  transform: rotate(90deg);
+  border-radius: 9px;
+  /* display: flex; */
+}
+
+.new_arrival {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.new {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  color: #3c4242;
+  font-family: "core_sans_c65_bold";
+  /* width: 50%; */
+}
+
+.newslide.swiper {
+  display: flex;
+  width: 90%;
+  gap: 35px;
+  margin-left: 55px;
+}
+
+.newslider {
+  position: relative;
+}
+
+.newarrow_1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+
+.newarrow_2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  left: 99%;
+}
+
+.arrow_1.swiper-button-prev,
+.arrow_2.swiper-button-next {
+  width: 20px;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+
+.swiper-slide.slides {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 20px;
+}
+
+.swiper-slide.slides img {
+  width: 295.62px;
+  height: 295.62px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+  border-radius: 12px;
+}
+
+.swiper-slide.slides p a {
+  margin: 20px 0 0;
+  font-size: 20px;
+  color: #3c4242;
+  text-align: left;
+  text-decoration: none;
+  font-family: core_sans_c65_bold;
+  font-weight: 700;
+}
+
+.fashion {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+
+
+.fashion .wrapper .fash {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+}
+
+.fashion .wrapper .fash .left {
+  width: 50%;
+  background-image: url(../images/bg-4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+
+.fashion .wrapper .fash .left .content h6 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #fff;
+  line-height: 50px;
+  width: 100%;
+  font-family: core_sans_c65_bold;
+}
+
+.fashion .wrapper .fash .left .content p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 50px;
+  color: #fff;
+  font-family: core_sans_c65_bold;
+  width: 360px;
+}
+
+.fashion .wrapper .fash .left .content .shops a {
+  padding: 16px 44px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  font-family: core_sans_c65_bold;
+}
+
+.fashion .wrapper .fash .right {
+  width: 50%;
+  background-image: url(../images/bg-5.jpg);
+  /* height: 100vh; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.Categories {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.cate {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.cate h1 {
+  color: #3c4242;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.Men {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+
+.newcard {
+  position: relative;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 20%;
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  height: auto;
+}
+
+.card-image-container {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  /* Center text */
+  margin-top: 10px;
+}
+
+.card-content h5 a {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #2a2f2f;
+  font-family: core_sans_c65_bold;
+}
+
+.card-content p a {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  font-family: core_sans_c65_bold;
+}
+
+.newarrow {
+  position: absolute;
+  bottom: 20px;
+  right: 2%;
+}
+
+.arrow {
+  width: 20px;
+  height: auto;
+  font-family: core_sans_c65_bold;
+}
+
+.women {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+
+
+.Brands .wrapper .Brand {
+  background-color: #323232;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  border-radius: 12px;
+  padding: 45px 40px;
+}
+
+.Brands .wrapper .Brand h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.Brands .wrapper .Brand p {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 50px;
+  font-family: core_sans_c65_bold;
+}
+
+.deal span {
+  color: #fbd103;
+}
+
+.Brands .wrapper .Brand .deals ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin-bottom: 10px;
+
+}
+
+.Brands .wrapper .Brand .deals ul li div {
+  padding: 0px 18px;
+  display: flex;
+  align-items: center;
+  width: 118.52px;
+  height: 85.55px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.Brands .wrapper .Brand .deals ul li div img {
+  width: 100%;
+  display: block;
+}
+
+
+
+.cat_women .wrapper .women .newcard_1 {
+  position: relative;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+
+.cat_women .wrapper .women .newcard_1 .newarrow button {
+  color: #3c4242;
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  border: none;
+  padding: 10px 15px;
+  font-family: core_sans_c65_bold;
+}
+
+.cat_women .wrapper .women .newcard_1 .wish {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  font-family: core_sans_c65_bold;
+}
+
+
+.feedback {
+  padding: 50px 0;
+}
+
+.feedback .wrapper .respons.swiper {
+  display: flex;
+  width: 100%;
+}
+
+.feedback .wrapper .swiper-slide.main {
+  background-color: #ffffff;
+  grid-gap: 23.19px;
+  border: 1.8px solid #bebcbd;
+  border-radius: 10px;
+  margin-right: 15px;
+  height: 257px;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.feedback .wrapper .swiper-slide.main .top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+
+
+.feedback .wrapper .swiper-slide.main .top .right ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.feedback .wrapper .swiper-slide.main .bottum {
+  padding: 10px 15px;
+}
+
+.feedback .wrapper .swiper-slide.main .bottum h3 {
+  margin-bottom: 20px;
+  color: #3c4242;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: core_sans_c65_bold;
+}
+
+.feedback .wrapper .swiper-slide.main .bottum p {
+  color: #807d7e;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: core_sans_c65_bold;
+}
+
+.feedback .wrapper .res {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.feedback .wrapper .res ul {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.feedback .wrapper .res ul li {
+  list-style: none;
+}
+
+.feedback .wrapper .res ul li img {
+  text-align: center;
+}
+
+.feedback .respons.swiper {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  background-color: #007aff;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff0000;
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.swiper-slide {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.footer {
+  background-color: #3c4242;
+  padding: 40px 40px;
+}
+
+
+
+.footer .wrapper .top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.footer .wrapper .top ul {
+  list-style: none;
+}
+
+.footer .wrapper .top ul li a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #f6f6f6;
+  line-height: 39.04px;
+  text-decoration: none;
+  font-family: core_sans_c65_bold;
+}
+
+.footer .wrapper .top ul li:last-child {
+  margin-right: 0;
+}
+
+.footer .wrapper .top ul li h1 {
+  color: #f6f6f6;
+  font-size: 29px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer .wrapper .bottum .last {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+
+.footer .wrapper .bottum .bottom_left ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .wrapper .bottum .bottom_left ul li {
+  list-style: none;
+  color: #2a2f2f;
+}
+
+
+.footer .wrapper .bottum .bottom_left ul li a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f6f6f6;
+  color: #2a2f2f;
+}
+
+.footer .wrapper .bottum .bottom_left ul li a .icon_1:hover {
+  background-color: #2d4373;
+  /* color: white; */
+}
+
+.footer .wrapper .bottum .bottom_left ul li a .icon_2:hover {
+  background-color: #c13584;
+  color: white;
+}
+
+.footer .wrapper .bottum .bottom_left ul li a .icon_3:hover {
+  background-color: #0d8ae8;
+  color: white;
+}
+
+.footer .wrapper .bottum .bottom_left ul li a .icon_4:hover {
+  background-color: #005582;
+  color: white;
+}
+
+
+.footer .wrapper .bottum .bottom_right h1 {
+  font-size: 29px;
+  font-weight: 700;
+  color: #f6f6f6;
+  margin-bottom: 25px;
+}
+
+.footer .wrapper .bottum .bottom_right ul {
+  display: flex;
+  gap: 20px;
+}
+
+.footer .wrapper .bottum .bottom_right ul li {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.footer .wrapper .bottum .bottom_right ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-family: core_sans_c65_bold;
+}
+
+
+.footer .wrapper .bottum .bottom_right ul li a h6 a {
+  color: #f6f6f6;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-decoration: none;
+  font-family: core_sans_c65_bold;
+}
+
+.footer .wrapper .bottum .bottom_right ul li a h3 a {
+  color: #f6f6f6;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  font-family: core_sans_c65_bold;
+}
+
+.footer .wrapper .bottum .footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  border-top: 1px solid #bebcbd;
+  border-bottom: 1px solid #bebcbd;
+}
+
+.footer .wrapper .bottum .footer_bottom h2 {
+  color: #f6f6f6;
+  font-size: 29px;
+  font-weight: 700;
+  font-family: core_sans_c65_bold;
+}
+
+
+
+.footer .wrapper .bottum p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 20px 0 20px 0;
+  font-family: core_sans_c65_bold;
+}
+
+@media (max-width: 1440px) {
+  
+  .sportlight {
+    padding: 140px 40px;
+  }
+
+  .sportlight .wrapper .light .left {
+    position: absolute;
+    left: 1%;
+  }
+
+  .sportlight .wrapper .light .right {
+    position: absolute;
+    right: 1%;
+  }
+
+  .card_left {
+    height: 68vh;
+  }
+
+  .card_right {
+    height: 68vh;
+  }
+
+  .fashion .wrapper .fash {
+    height: 191vh;
+  }
+
+  .swiper-slide.slides img {
+    width: 280.62px;
+    height: 290.62px;
+  }
+
+  .newslide.swiper {
+    display: flex;
+    width: 90%;
+    gap: 35px;
+    margin-left: 65px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .sportlight .wrapper .light .banner h2 {
+    width: 35%;
+  }
+
+  .sportlight .wrapper .light .banner small {
+    font-size: 28px;
+  }
+
+  .sportlight .wrapper .light .banner .shop a {
+    padding: 12px 40px;
+    font-size: 18px;
+  }
+
+  .sportlight {
+    padding: 80px 40px;
+  }
+
+  .sportlight .wrapper .light .banner {
+    padding: 80px 0 0 80px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    margin: 15px 0;
+  }
+
+  .swiper-slide.slides img {
+    width: 271.62px;
+  }
+
+  .newslide.swiper {
+    display: flex;
+    width: 90%;
+    gap: 35px;
+    margin-left: 60px;
+  }
+
+}
+
+@media (max-width: 1280px) {
+  .sportlight {
+    min-height: 140vh;
+    padding: 40px 40px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul li a .icon {
+    padding: 6px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    width: 34%;
+    font-size: 60px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    width: 100%;
+  }
+
+  .swiper-slide.slides img {
+    width: 246.62px;
+    height: 254.62px;
+  }
+
+  .newslide.swiper {
+    display: flex;
+    width: 90%;
+    gap: 35px;
+    margin-left: 55px;
+  }
+
+  .Men {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+
+  .newcard {
+    width: 23%;
+  }
+
+  .newarrow {
+    bottom: 7px;
+  }
+
+  .cat_women .wrapper .women .newcard_1 .newarrow button {
+    padding: 5px 10px;
+    font-family: core_sans_c65_bold;
+  }
+
+  .card-content h5 a {
+    font-size: 17px;
+  }
+
+  .card_left {
+    height: 71vh;
+  }
+
+  .card_right {
+    height: 71vh;
+  }
+
+  .card_right h3 {
+    width: 59%;
+  }
+}
+
+@media (max-width: 1100px) {
+  header .wrapper #task_baar .left {
+    display: flex;
+    align-items: center;
+    width: 55%;
+}
+header .wrapper #task_baar .right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 44%;
+}
+  .sportlight .wrapper .light .banner h2 {
+    width: 41%;
+    font-size: 60px;
+  }
+
+  .newslide.swiper {
+    margin-left: 50px;
+  }
+
+  .newarrow_2 {
+    left: 100%;
+  }
+
+  .swiper-slide.slides img {
+    width: 210.62px;
+    height: 228.62px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    width: 106%;
+  }
+
+  .newcard {
+    width: 20%;
+  }
+
+  .feedback .wrapper .swiper-slide.main {
+    height: 282px;
+  }
+
+  .footer .wrapper .top ul li a {
+    font-size: 16px;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    font-size: 24px;
+  }
+
+  .card_right h3 {
+    font-size: 32px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    font-size: 30px;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    font-size: 18px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 12px 40px;
+  }
+
+  .Brands .wrapper .Brand h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .Brands .wrapper .Brand p {
+    font-size: 18px;
+  }
+
+  .Brands .wrapper .Brand .deals ul li div {
+    padding: 0px 18px;
+    display: flex;
+    align-items: center;
+    width: 100.52px;
+    height: 80.55px;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .feedback .wrapper .swiper-slide.main .bottum h3 {
+    font-size: 18px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom h2 {
+    font-size: 22px;
+  }
+
+  .footer .wrapper .bottum .bottom_right h1 {
+    font-size: 22px;
+  }
+
+  .footer .wrapper .bottum p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 980px) {
+  header .wrapper #task_baar .left nav ul {
+    gap: 16px;
+    padding: 10px;
+  }
+
+  header .wrapper #task_baar .right .cover {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  header .wrapper #task_baar .left nav {
+    display: flex;
+    margin-left: 18px;
+    align-items: center;
+  }
+
+  header .wrapper #task_baar .right {
+    width: 50%;
+    gap: 10px;
+  }
+
+  .sportlight .wrapper .light .banner small {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35.21px;
+    color: #ffffff;
+  }
+
+  .sportlight {
+    min-height: 104vh;
+  }
+
+  .sportlight .wrapper .light .banner {
+    padding: 40px 0 0 80px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    width: 42%;
+    font-size: 55px;
+    font-weight: 600;
+  }
+
+  .sportlight .wrapper .light .banner .shop a {
+    padding: 10px 50px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .card_left {
+    height: 63vh;
+  }
+
+  .card_right {
+    height: 63vh;
+  }
+
+  .card_left h3 {
+    font-size: 29px;
+    font-weight: 600;
+  }
+
+  .card_right h3 {
+    font-size: 29px;
+    font-weight: 600;
+    width: 68%;
+  }
+
+  .card_right p {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .card_right a {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .swiper-slide.slides img {
+    width: 230.62px;
+    height: 247.62px;
+  }
+
+  .newslide.swiper {
+    margin-left: 45px;
+  }
+
+  .feedback .wrapper .swiper-slide.main {
+    height: 310px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 10px 50px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .Men {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .newcard {
+    width: 20%;
+  }
+
+  .card-content h5 a {
+    font-size: 15px;
+  }
+
+  .Brands .wrapper .Brand h1 {
+    font-size: 45px;
+  }
+
+  .Brands .wrapper .Brand p {
+    font-size: 20px;
+  }
+
+  .Brands .wrapper .Brand .deals ul {
+    gap: 15px;
+  }
+
+  .cat_women .wrapper .women .newcard_1 .newarrow button {
+    padding: 5px;
+  }
+
+  .newarrow {
+    bottom: 6px;
+  }
+
+  .cat_women .wrapper .women .newcard_1 .wish {
+    right: 18px;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    font-size: 20px;
+  }
+
+  .footer .wrapper .top ul li a {
+    font-size: 14px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul li a .icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .footer .wrapper .bottum .bottom_right h1 {
+    font-size: 20px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom h2 {
+    font-size: 25px;
+  }
+
+  .footer .wrapper .bottum p {
+    font-size: 16px;
+  }
+
+  .rectangle {
+    width: 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  header .wrapper #task_baar .left nav {
+    display: none;
+  }
+
+  header .wrapper #task_baar .right .icons {
+    display: none;
+  }
+
+  header .menu-toggle {
+    display: flex;
+  }
+
+  .open-menu {
+    display: block;
+  }
+
+  header .wrapper #task_baar .left {
+    width: 20%;
+  }
+
+  header .wrapper #task_baar .right {
+    width: 60%;
+  }
+
+  #nav-menu {
+    height: 100vh;
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    width: 20%;
+  }
+
+  #nav-menu .cover {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  #nav-menu .cover ul li {
+    margin: 25px 0px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  #nav-menu .cover div img {
+    width: 30px;
+    display: block;
+  }
+
+  #nav-menu .cover div .icons {
+    display: flex;
+  }
+
+  #nav-menu .cover div .icons a {
+    width: 100%;
+  }
+
+  #nav-menu .cover div .icons img {
+    width: 100%;
+    display: block;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    line-height: 80.62px;
+    font-size: 40px;
+    width: 40%;
+  }
+
+  .sportlight .wrapper .light .banner small {
+    font-size: 20px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    margin: 8px 0;
+  }
+
+  .sportlight .wrapper .light .banner .shop a {
+    padding: 10px 40px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 10px 40px;
+  }
+
+  .card_left {
+    height: 75vh;
+  }
+
+  .card_right {
+    height: 75vh;
+  }
+
+  .card_left h3 {
+    font-size: 40px;
+    font-weight: 100;
+  }
+
+  .card_right h3 {
+    font-size: 44px;
+    font-weight: 100;
+    width: 59%;
+  }
+
+  .fashion .wrapper .fash .left {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .fashion .wrapper .fash .right {
+    border-radius: 0px 0px 8px 8px;
+  }
+
+  .card-one {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card_left {
+    width: 100%;
+  }
+
+  .card_right {
+    width: 100%;
+  }
+
+  .newslide {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: 45px;
+  }
+
+  .swiper-slide.slides {
+    width: 40%;
+  }
+
+  .newslide.swiper {
+    margin-left: 35px;
+  }
+
+  .swiper-slide.slides img {
+    width: 182.62px;
+    height: 208.62px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .fashion .wrapper .fash {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+  }
+
+  .fashion .wrapper .fash .left {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    width: 65%;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    width: 64%;
+  }
+
+  .fashion .wrapper .fash .right {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .Men {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .cate h1 {
+    font-size: 28px;
+  }
+
+  .newcard {
+    width: 40%;
+  }
+
+  .women {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .Brands .wrapper .Brand h1 {
+    font-size: 30px;
+  }
+
+  .Brands .wrapper .Brand p {
+    font-size: 18px;
+  }
+
+  .Brands .wrapper .Brand .deals ul li div {
+    width: 70.52px;
+    height: 65.55px;
+  }
+
+  .feedback .wrapper .swiper-slide.main {
+    height: 270px;
+  }
+
+  .feedback .wrapper .swiper-slide.main .top {
+    margin-bottom: 0px;
+  }
+
+  .feedback .wrapper .swiper-slide.main .bottum h3 {
+    margin-bottom: 10px;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .footer .wrapper .top {
+    gap: 14px;
+  }
+
+  .footer .wrapper .top ul li a {
+    line-height: 30.04px;
+    font-size: 12px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul {
+    gap: 8px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul li a .icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .footer .wrapper .bottum .last {
+    padding-bottom: 20px;
+  }
+
+  .footer .wrapper .bottum .bottom_right h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .footer .wrapper .bottum .bottom_right ul li h3 a {
+    font-size: 16px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom {
+    padding: 10px 10px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom h2 {
+    font-size: 20px;
+  }
+
+  .footer .wrapper .bottum p {
+    margin: 10px 0px;
+  }
+
+  .footer .wrapper .bottum p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 680px) {
+  .sportlight {
+    padding: 10px 25px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    line-height: 75.62px;
+  }
+
+  .sportlight .wrapper .light .banner {
+    padding-left: 70px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    font-size: 37px;
+    font-weight: 400;
+    width: 36%;
+  }
+
+  .sportlight .wrapper .light .banner small {
+    font-size: 18px;
+  }
+
+  .sportlight .wrapper .light .banner .shop {
+    margin: 25px 0px;
+  }
+
+  .sportlight .wrapper .light .banner .shop a {
+    padding: 10px 35px;
+    font-size: 16px;
+  }
+
+  .sportlight .wrapper .spo {
+    right: 40%;
+  }
+
+  .swiper-slide.slides img {
+    width: 168.62px;
+    height: 190.62px;
+  }
+
+  .newslide.swiper {
+    margin-left: 34px;
+  }
+
+  .newarrow_2 {
+    left: 101%;
+  }
+
+  .footer .wrapper .top ul li a {
+    font-size: 9px;
+    font-weight: 500;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul li a .icon {
+    padding: 10px;
+  }
+
+  .new {
+    padding-bottom: 0px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    width: 75%;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 10px 40px;
+  }
+
+  .fashion .wrapper .fash .left {
+    height: 80vh;
+  }
+
+  .fashion .wrapper .fash .right {
+    height: 80vh;
+  }
+
+  .cate h1 {
+    font-size: 25px;
+  }
+
+  .Brands .wrapper .Brand .deals ul li div {
+    width: 71.52px;
+    height: 61.55px;
+  }
+
+  .Brands .wrapper .Brand .deals ul {
+    gap: 10px;
+  }
+
+  .Brands .wrapper .Brand .deals ul li div {
+    padding: 0px 15px;
+  }
+
+  .cate {
+    margin-bottom: 30px;
+  }
+
+  .women {
+    gap: 8px;
+  }
+
+  .newslide {
+    justify-content: center;
+  }
+
+  .Men {
+    justify-content: center;
+  }
+
+  .cat_women .wrapper .women .newcard_1 {
+    width: 40%;
+  }
+
+  .feedback .wrapper .swiper-slide.main .bottum p {
+    font-size: 12px;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    font-size: 14px;
+  }
+
+  .footer .wrapper .top {
+    padding: 10px 10px;
+  }
+
+  .footer .wrapper .bottum .last {
+    padding-bottom: 10px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul li a .icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom h2 {
+    font-size: 18px;
+  }
+
+  .footer .wrapper .bottum p {
+    font-size: 12px;
+  }
+
+  .footer .wrapper .bottum .bottom_right h1 {
+    font-size: 15px;
+  }
+
+  .footer .wrapper .bottum .bottom_right ul li h6 a {
+    font-size: 5px;
+  }
+
+  .footer .wrapper .bottum .bottom_right ul li h3 a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sportlight .wrapper .light .banner h2 {
+    font-size: 34px;
+  }
+
+  .sportlight .wrapper .light .banner small {
+    font-size: 16px;
+  }
+
+  .card_left h3 {
+    font-size: 35px;
+  }
+
+  .card_right h3 {
+    font-size: 36px;
+    width: 58%;
+  }
+
+  .newarrow_1 {
+    left: -1%;
+  }
+
+  .newslide.swiper {
+    margin-left: 30px;
+  }
+
+  .swiper-slide.slides img {
+    width: 159.62px;
+    height: 190.62px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 10px 35px;
+  }
+
+  .newarrow {
+    bottom: 6px;
+    width: 54px;
+    height: 30px;
+  }
+
+  .feedback .wrapper .swiper-slide.main {
+    height: 72vh;
+  }
+
+  .footer .wrapper .top {
+    width: 109%;
+  }
+}
+
+@media(max-width:580px) {
+  header .wrapper #task_baar {
+    width: 100%;
+  }
+
+  .swiper-slide.slides img {
+    width: 203.62px;
+    height: 206.62px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    width: 86%;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    width: 68%;
+  }
+
+}
+
+@media (max-width: 540px) {
+  header .wrapper #task_baar {
+    width: 93%;
+  }
+
+  .sportlight .wrapper .spo {
+    display: none;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    width: 87%;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    width: 89%;
+  }
+}
+
+@media (max-width: 480px) {
+  header .wrapper #task_baar .right .cover {
+    position: absolute;
+    bottom: 82%;
+    right: 95px;
+    padding: 10px;
+  }
+
+  header {
+    padding-top: 15px;
+  }
+
+  header {
+    padding-bottom: 30px;
+  }
+
+  header .wrapper #task_baar .right .cover {
+    padding: 10px;
+  }
+
+  .sportlight .wrapper .spo ul li .car img {
+    width: 40px;
+  }
+
+  .sportlight .wrapper .spo ul li .car_1 img {
+    width: 40px;
+  }
+
+  #nav-menu .cover .cover {
+    display: block;
+    gap: 10px;
+  }
+
+  #nav-menu .cover .cover .list {
+    display: flex;
+    margin: 0;
+  }
+
+  #nav-menu {
+    width: 30%;
+  }
+
+  .open-menu {
+    margin-left: 240px;
+  }
+
+  #nav-menu .cover div .icons img {
+    width: 100%;
+  }
+
+  #nav-menu .cover div .icons {
+    gap: 5px;
+  }
+
+  .swiper-slide.slides img {
+    width: 172.62px;
+    height: 182.62px;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    width: 77%;
+  }
+
+  .Brands .wrapper .Brand .deals ul {
+    flex-wrap: wrap;
+  }
+
+  .feedback .wrapper .swiper-slide.main {
+    width: 100%;
+    height: 63vh;
+    margin-bottom: 10px;
+  }
+
+  .feedback .wrapper .swiper-slide.main:last-child {
+    margin-bottom: 0px;
+  }
+
+  .feedback .wrapper .respons {
+    display: block;
+  }
+
+  .newslide {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+  }
+
+  .rectangle {
+    width: 4%;
+  }
+
+  .footer .wrapper .top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0px;
+  }
+
+  .footer {
+    padding: 25px 30px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer .wrapper .bottum .bottom_right ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 0px;
+  }
+
+  .footer .wrapper .top ul {
+    width: 46%;
+    margin-bottom: 20px;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .footer .wrapper .top ul li a {
+    font-size: 8px;
+  }
+
+  .footer .wrapper .top {
+    gap: 8px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul li a .icon {
+    width: 8px;
+    height: 8px;
+  }
+
+  .footer .wrapper .bottum .last {
+    gap: 10px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom h2 {
+    font-size: 16px;
+  }
+
+  .footer .wrapper .bottum p {
+    font-size: 8px;
+  }
+
+  .footer .bottum .bottom_left,
+  .footer .bottum .bottom_right {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer .bottum .bottom_right h1 {
+    font-size: 1.2em;
+  }
+
+  .footer .bottum .bottom_right ul li a .text h6,
+  .footer .bottum .bottom_right ul li a .text h3 {
+    font-size: 0.9em;
+  }
+
+  .footer .bottum .footer_bottom {
+    text-align: center;
+  }
+
+  .footer .bottum .footer_bottom h2 {
+    font-size: 1.2em;
+  }
+
+  .footer .bottum p {
+    text-align: center;
+    font-size: 0.8em;
+    padding: 10px;
+  }
+
+  .sportlight .wrapper .light .banner {
+    padding: 0 0 0 40px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    line-height: 55.62px;
+    font-size: 28px;
+  }
+
+  .sportlight .wrapper .light .banner small {
+    font-size: 14px;
+  }
+
+  .sportlight .wrapper .light .banner .shop a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .card_left h3 {
+    font-size: 24px;
+  }
+
+  .card_left p {
+    font-size: 14px;
+  }
+
+  .card_left a {
+    font-size: 16px;
+  }
+
+  .card_right p {
+    font-size: 16px;
+  }
+
+  .card_right h3 {
+    font-size: 27px;
+  }
+
+  .card_right p {
+    font-size: 14px;
+  }
+
+  .newarrow {
+    bottom: -1px;
+    right: 4%;
+    display: flex;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .cat_women .wrapper .women .newcard_1 .newarrow button {
+    padding: 5px 10px;
+  }
+
+  .card-content h5 a {
+    font-size: 14px;
+  }
+
+  .card-content p a {
+    font-size: 12px;
+  }
+
+  .fashion .wrapper .fash .left {
+    height: 60vh;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    width: 100%;
+  }
+
+  .fashion .wrapper .fash .right {
+    height: 60vh;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    margin-bottom: 30px;
+  }
+
+  .fashion .wrapper .fash .left {
+    border-radius: 8px 8px 0px 0px;
+    padding: 30px;
+  }
+
+  .fashion .wrapper .fash .right {
+    border-radius: 0px 0px 8px 8px;
+    padding: 30px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 10px 25px;
+  }
+
+  .sportlight .wrapper .light .banner .shop a {
+    padding: 10px 25px;
+  }
+
+  .sportlight .wrapper .light .left img {
+    display: none;
+  }
+
+  .sportlight .wrapper .right img {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  
+  header {
+    padding-bottom: 15px;
+}
+  header .wrapper #task_baar .right .cover input {
+    width: 100%;
+  }
+
+  header .wrapper #task_baar .right {
+    width: 55%;
+  }
+
+  header .wrapper #task_baar {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+}
+header .wrapper #task_baar .right .cover {
+  padding: 10px;
+  position: absolute;
+  bottom: 71%;
+  right: 28%;
+}
+
+  .newslide {
+    display: flex;
+    width: 90%;
+    gap: 35px;
+    margin-left: 20px;
+  }
+
+  .open-menu {
+    margin-left: 215px;
+  }
+
+  .rectangle {
+    width: 6%;
+  }
+
+  #nav-menu {
+    width: 35%;
+  }
+
+  .sportlight {
+    min-height: 80vh;
+  }
+
+  .sportlight .wrapper .light .banner {
+    padding: 0px 0px 0px 20px;
+  }
+
+  .sportlight {
+    padding: 5px 10px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    line-height: 40.62px;
+    font-size: 23px;
+  }
+
+  .sportlight .wrapper .light .banner small {
+    font-size: 14px;
+  }
+
+  .card_right h3 {
+    font-size: 18px;
+    width: 55%;
+  }
+
+  .card_right p {
+    font-size: 14px;
+  }
+
+  .card_right a {
+    font-size: 16px;
+  }
+
+  .card_left p {
+    font-size: 14px;
+  }
+
+  .card_left h3 {
+    font-size: 18px;
+  }
+
+  .card_left a {
+    font-size: 16px;
+  }
+
+  .card_left {
+    height: 57vh;
+  }
+
+
+  .arrow {
+    width: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .swiper-slide.slides img {
+    width: 260.62px;
+    height: 280.62px;
+  }
+
+  .swiper-slide.slides p a {
+    font-size: 14px;
+  }
+
+  .fashion .wrapper .fash .left .content h6 {
+    font-size: 17px;
+  }
+
+  .fashion .wrapper .fash .left .content p {
+    font-size: 12px;
+  }
+
+  .fashion .wrapper .fash .left {
+    border-radius: 8px 8px 0px 0px;
+    padding: 20px;
+  }
+
+  .fashion .wrapper .fash .left {
+    height: 67vh;
+  }
+
+  .fashion .wrapper .fash .right {
+    border-radius: 0px 0px 8px 8px;
+    padding: 20px;
+  }
+
+  .fashion .wrapper .fash .right {
+    height: 50vh;
+  }
+
+  .newcard {
+    width: 39%;
+  }
+
+  .cate h1 {
+    font-size: 23px;
+  }
+
+  .cat_women .wrapper .women .newcard_1 {
+    width: 40%;
+  }
+
+  .sportlight .wrapper .spo ul li .car_1 img {
+    width: 40px;
+  }
+
+  .sportlight .wrapper .spo ul li .car img {
+    width: 40px;
+  }
+
+  .sportlight .wrapper .light .left img {
+    display: none;
+  }
+
+  .sportlight .wrapper .right img {
+    display: none;
+  }
+
+  .card-content h5 a {
+    font-size: 10px;
+  }
+
+  .card-content p a {
+    font-size: 8px;
+  }
+
+  .Brands .wrapper .Brand h1 {
+    font-size: 25px;
+  }
+
+  .Brands .wrapper .Brand p {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .cat_women .wrapper .women .newcard_1 .wish {
+    right: 15px;
+  }
+
+  .cat_women .wrapper .women .newcard_1 .newarrow button {
+    padding: 0px;
+  }
+
+  .newarrow {
+    bottom: -23px;
+    left: 10px;
+  }
+
+  .feedback .wrapper .swiper-slide.main {
+    height: 65vh;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 0px;
+  }
+
+  .footer .wrapper .top {
+    padding: 0px;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    margin: 20px 0;
+  }
+
+  .footer .wrapper .top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0px;
+    height: 72vh;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footer .wrapper .bottum {
+    padding: 40px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom h2 {
+    font-size: 14px;
+  }
+
+  .footer .wrapper .bottum .bottom_right h1 {
+    font-size: 14px;
+  }
+
+  .footer .wrapper .bottum .bottom_left ul li a .icon {
+    width: 6px;
+    height: 6px;
+  }
+
+  .footer .wrapper .bottum .bottom_right ul li a img {
+    width: 80%;
+  }
+
+  .card-content h5 a {
+    font-size: 14px;
+  }
+
+  .card-content p a {
+    font-size: 12px;
+  }
+
+  .swiper-slide.slides p a {
+    font-size: 13px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    margin-bottom: 15px;
+  }
+
+  .dealer {
+    background-color: #fff;
+    padding: 25px 0;
+    margin-bottom: 40px;
+  }
+
+  .fashion {
+    padding: 40px 0;
+    background-color: #fff;
+  }
+
+  .Categories {
+    padding: 40px 0;
+    background-color: #fff;
+  }
+
+  .footer .wrapper .bottum .footer_bottom img {
+    width: 6%;
+  }
+
+  .footer .wrapper .top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0px;
+    flex-wrap: wrap;
+    height: 112vh;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footer .wrapper .top ul li a {
+    font-size: 12px;
+  }
+
+  .card_right {
+    height: 57vh;
+  }
+
+  .footer .wrapper .bottum .last {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 320px) {
+  header .wrapper #task_baar .right .cover {
+    padding: 10px;
+    position: absolute;
+    bottom: 71%;
+    left:6%
+  }
+  .footer .wrapper .bottum {
+    padding-top: 70px;
+}
+  .footer .wrapper .bottum .bottom_right ul li a img {
+    width: 80%;
+  }
+
+  #nav-menu .cover {
+    gap: 12px;
+  }
+
+  .sportlight .wrapper .light .banner .shop a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .cate h1 {
+    font-size: 18px;
+  }
+
+  .fashion .wrapper .fash .left .content .shops a {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .open-menu {
+    margin-left: 190px;
+  }
+
+  .sportlight .wrapper .light .banner h2 {
+    font-size: 20px;
+  }
+
+  .footer .wrapper .bottum .footer_bottom img {
+    width: 5%;
+  }
+  .feedback {
+    padding: 20px 0;
+}
+  .feedback .wrapper .swiper-slide.main {
+    height: 66vh;
+  }
+
+  .footer .wrapper .top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0px;
+    flex-wrap: wrap;
+    height: 112vh;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footer .wrapper .top ul li a {
+    font-size: 12px;
+  }
+
+  .footer .wrapper .top ul li h1 {
+    font-size: 14px;
+  }
+}
+
+
+/* profile.css  */
+
+.update-profile {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.update-profile:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+}
